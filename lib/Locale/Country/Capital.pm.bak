@@ -1,0 +1,17 @@
+package Locale::Country::Capital;
+
+use strict;
+use warnings;
+use Carp qw(croak);
+
+use Exporter;
+
+our @ISA       = qw(Exporter);
+our @EXPORT_OK = qw( country2capital );
+
+# VERSION 0.1.0
+# ABSTRACT: Module to provide capital from given country
+=pod
+=encoding utf8
+=head1 NAME
+=cut
