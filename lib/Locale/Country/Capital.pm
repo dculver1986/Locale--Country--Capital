@@ -151,7 +151,7 @@ our %country_hash = (
     'United Arab Emirates'                         => 'Abu Dhabi',
     'Singapore'                                    => 'Singapore',
     'Belarus'                                      => 'Minsk',
-    'Viet Nam'                                     => 'Hanoi',
+    'Vietnam'                                      => 'Hanoi',
     'Niger'                                        => 'Niamey',
     'Ukraine'                                      => 'Kiev',
     'Romania'                                      => 'Bucharest',
@@ -305,6 +305,9 @@ our %country_hash = (
     'Isle of Man'                                  => 'Douglas',
     'Greenland'                                    => 'Nuuk',
     'Congo, Democratic Republic of the'            => 'Kinshasa',
+    'Northern Mariana Islands'                     => 'Capitol Hill',
+    'Svalbard and Jan Mayen Islands'               => 'Longyearbyen',
+    'Netherlands Antilles'                         => 'Willemstad'
 
 );
 

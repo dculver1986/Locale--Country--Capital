@@ -15,6 +15,16 @@ for my $country (@countries) {
 
     my $capital = country2capital($country);
 
+    if ( $country eq 'Antarctica' || $country eq 'Western Sahara' ) {
+        next;
+    }
+
+    if ( $country eq 'Svalbard and Jan Mayen Islands' ) {
+        $mech->get('http://en.wikipedia.org/wiki/Svalbard');
+        $mech->content_contains($capital, "Contains capital for $country" );
+        next;
+    }
+
     if ( $country eq 'Palestine, State of' ) {
         $mech->get("http://en.wikipedia.org/wiki/State_of_Palestine");
         $mech->content_contains( $capital, "Contains capital for $country" );
