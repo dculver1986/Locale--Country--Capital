@@ -7,7 +7,7 @@ use Carp qw(croak);
 use Exporter;
 
 our @ISA       = qw(Exporter);
-our @EXPORT_OK = qw( country2capital );
+our @EXPORT_OK = qw( country2capital get_all_countries );
 
 # VERSION 0.1.0
 # ABSTRACT: Module to provide capital from given country
@@ -52,11 +52,23 @@ our @EXPORT_OK = qw( country2capital );
 Returns a string of the country capital. Returns an empty string if country has no capital.
 It does not return unicode characters in the capital string.
 
-=head1 DISCLAIMER
+=head2 get_all_countries
+
+    use strict;
+    use warnings;
+
+    use Locale::Country::Capital qw(get_all_countries);
+
+    my @countries = get_all_countries();
+
+Returns an Array of all countries in the country/capital lookup table.
+
+=head1 BUGS AND LIMITATIONS
 
 I acknowledge the possibility that some countries may be missing fro this module or have
-changed their capital since the release of this module. If you notice inconsistencies, please
-feel free to email me or submit a pull request if you wish to contribute.
+changed their capital since the release of this module. Wikipedia was used as the source
+for the capitals. If you notice inconsistencies, please feel free to email me or submit
+a pull request if you wish to contribute.
 
 =head1 AUTHOR
 
@@ -64,7 +76,12 @@ Daniel Culver, C<< perlsufi@cpan.org >>
 
 =head1 ACKNOWLEDGEMENTS
 
+Wikipedia
 HostGator
+
+=head1 LICENSE AND COPYRIGHT
+
+This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 =cut
 
@@ -97,7 +114,7 @@ our %country_hash = (
     'Serbia'                         => 'Belgrade',
     'Saint Lucia'                    => 'Castries',
     'Tunisia'                        => 'Tunis',
-    'Palestine, State of'            => 'Undetermined',
+    'Palestine, State of'            => 'Jerusalem',
     'Morocco'                        => 'Rabat',
     'Malawi'                         => 'Lilongwe',
     'Mauritius'                      => 'Port Louis',
@@ -163,9 +180,9 @@ our %country_hash = (
     'Syria'                          => 'Damascus',
     'Saint Kitts and Nevis'          => 'Basseterre',
     'Benin'                          => 'Porto-Novo',
-    'Mongolia'                       => 'Ulaan Baatar',
+    'Mongolia'                       => 'Ulan Bator',
     'Hungary'                        => 'Budapest',
-    'Trinidad and Tobago'            => 'Port-of-Spain',
+    'Trinidad and Tobago'            => 'Port of Spain',
     'Liechtenstein'                  => 'Vaduz',
     'Pakistan'                       => 'Islamabad',
     'Sri Lanka'                      => 'Colombo',
@@ -216,7 +233,7 @@ our %country_hash = (
     'Norway'                         => 'Oslo',
     'Marshall Islands'               => 'Majuro',
     'Canada'                         => 'Ottawa',
-    'Cyprus'                         => 'Lefkosia',
+    'Cyprus'                         => 'Nicosia',
     'Montenegro'                     => 'Podgorica',
     'Luxembourg'                     => 'Luxembourg',
     'Papua New Guinea'               => 'Port Moresby',
@@ -248,7 +265,7 @@ our %country_hash = (
     'Colombia'                       => 'Bogota',
     'Gambia'                         => 'Banjul',
     'Liberia'                        => 'Monrovia',
-    'Bahrain'                        => 'Al-Manamah',
+    'Bahrain'                        => 'Manamah',
     'Burundi'                        => 'Bujumbura',
     'Myanmar'                        => 'Naypyidaw',
     'Bosnia and Herzegovina'         => 'Sarajevo',
@@ -293,6 +310,16 @@ sub country2capital {
     else {
         croak "$country not found";
     }
+};
+
+sub get_all_countries {
+
+    my @countries;
+    for my $country ( keys %country_hash ) {
+        push @countries, $country;
+    }
+
+    return @countries;
 };
 
 1;
