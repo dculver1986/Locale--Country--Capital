@@ -36,7 +36,12 @@ for my $country (@countries) {
         next;
 
     }
+    if ( $country eq 'Congo, Democratic Republic of the' ) {
+        $mech->get("http://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo");
+        $mech->content_contains( $capital, "Contains capital for $country" );
+        next;
 
+    }
     $mech->get("http://en.wikipedia.org/wiki/$country");
     $mech->content_contains( $capital, "Contains capital for $country" );
 }

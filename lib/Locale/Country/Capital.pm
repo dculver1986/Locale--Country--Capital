@@ -300,6 +300,12 @@ our %country_hash = (
     'Niue'                                         => 'Alofi',
     'Zimbabwe'                                     => 'Harare',
     'New Caledonia'                                => 'Noumea',
+    'Scotland'                                     => 'Edinburgh',
+    'Wales'                                        => 'Cardiff',
+    'Isle of Man'                                  => 'Douglas',
+    'Greenland'                                    => 'Nuuk',
+    'Congo, Democratic Republic of the'            => 'Kinshasa',
+
 );
 
 sub country2capital {
