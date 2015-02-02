@@ -65,7 +65,7 @@ Returns an Array of all countries in the country/capital lookup table.
 
 =head1 BUGS AND LIMITATIONS
 
-I acknowledge the possibility that some countries may be missing fro this module or have
+I acknowledge the possibility that some countries may be missing from this module or have
 changed their capital since the release of this module. Wikipedia was used as the source
 for the capitals. If you notice inconsistencies, please feel free to email me or submit
 a pull request if you wish to contribute.
@@ -77,6 +77,7 @@ Daniel Culver, C<< perlsufi@cpan.org >>
 =head1 ACKNOWLEDGEMENTS
 
 Wikipedia
+
 HostGator
 
 =head1 LICENSE AND COPYRIGHT
