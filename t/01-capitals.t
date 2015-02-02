@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::Most;
+use Test::More;
 use Test::WWW::Mechanize;
 use Locale::Country::Capital qw( country2capital get_all_countries);
 
