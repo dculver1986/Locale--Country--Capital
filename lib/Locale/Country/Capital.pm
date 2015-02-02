@@ -315,7 +315,7 @@ sub country2capital {
 sub get_all_countries {
 
     my @countries;
-    for my $country ( keys %country_hash ) {
+    for my $country ( sort keys %country_hash ) {
         push @countries, $country;
     }
 
