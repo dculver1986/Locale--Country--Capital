@@ -49,8 +49,9 @@ our @EXPORT_OK = qw( country2capital get_all_countries );
 
     print $capital . " is the capital\n";
 
-Returns a string of the country capital. Returns an empty string if country has no capital.
-It does not return unicode characters in the capital string.
+Given a country string that starts with a capital letter, it returns a string
+of the country's capital. It returns an empty string if country has no capital.
+The method does not return unicode characters in the capital string.
 
 =head2 get_all_countries
 
